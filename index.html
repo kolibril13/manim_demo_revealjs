@@ -1,0 +1,166 @@
+<!doctype html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+	<title>Manimkurs Tag 1 </title>
+	<link rel="icon" href="icon.png">
+
+	<link rel="stylesheet" href="dist/reset.css">
+	<link rel="stylesheet" href="dist/reveal.css">
+	<link rel="stylesheet" href="dist/theme/white.css">
+
+	<!-- Theme used for syntax highlighted code -->
+	<link rel="stylesheet" href="plugin/highlight/monokai.css">
+	<style>
+		.left {
+			text-align: left;
+		}
+	</style>
+</head>
+
+<body>
+	<div class="reveal">
+		<div class="slides">
+			</section>
+			<section data-background-video="assets/PresentationBackground.mp4" data-background-video-loop="true"
+				data-background-opacity="0.1">
+				<div>
+					<br>
+					<br>
+					Konzeption physikalischer Animation mit "manim"
+					<br>
+					<br>
+					Jan-Hendrik Müller
+					<br>
+					20.1.2023
+
+				</div>
+			</section>
+			<section data-markdown>
+				<textarea data-template>
+
+
+<div style="font-size: 30px;">
+
+
+### Das Tool Manim
+* **Manim** = **Ma**thematische **Anim**ationen
+* Koppelt mathematische Formeln intuitiv an Farben und Konturen.
+* Kostenlose Open Source Software
+* Python Code-generierte Animationen
+* sehr gute Anbindung an physikalische und mathematische
+	Python Pakete 
+
+
+---
+#### Inspirierende Kanäle
+<img src="assets/3b1b.png" width=80% >
+---
+
+<img  width=80%  src="assets/veritasium.png" >
+
+---
+
+<img src="assets/reducable.png">
+
+
+---
+Dopplereffekt
+<video data-autoplay width="100%" src="assets/Doppler.mp4">
+
+---
+Vektorfeld
+
+<div>
+	<video data-autoplay width="100%" src="assets/ScaleVectorFieldFunction.mp4">
+</div>
+
+---
+
+
+Doppelpendel
+
+<div>
+	<video data-autoplay width="100%" src="assets/DoublePendulum.mp4">
+</div>
+
+<div style="font-size: 20px; text-align: justify;position: absolute;
+left: 30px; bottom: -40px; "> 
+
+Made by [@Sam Maksimovich](https://www.youtube.com/watch?v=n7JK4Ht8k8M) 
+
+
+---
+
+### Wann ist manim geeignet?
+* Für sehr präzise Animationen
+* Iteration über Objekte
+* Zufallsparameter generieren
+* Anbindung an schon in Python implementierte Physik/Mathe Module
+* "Latex für Video"
+
+
+<div style="font-size: 30px;">
+
+---
+
+### Hintergrund
+
+* 2015 wurde manim von Grant Sanderson für den YouTube Kanal [3blue1brown](https://youtube.com/3blue1brown) entwickelt.
+* Seither wird es von einer Community ehrenamtlich weiterentwickelt.
+</div>
+
+</textarea>
+			</section>
+
+
+
+			<section data-markdown>
+				<textarea data-template>
+### Bauen von Szenen
+
+<img src="assets/mobjects.png">
+---
+
+
+### Erste Animation
+
+```py
+class Example(Scene):
+	def construct(self):
+		dot = Dot(color=YELLOW, radius=0.5)
+		self.play(dot.animate.shift(3*RIGHT).scale(2).set_color(BLUE))
+```
+<video width="50%" src="assets/ExampleAni.mp4" controls>
+
+---
+
+
+					</textarea>
+			</section>
+		</div>
+	</div>
+
+	<script src="dist/reveal.js"></script>
+	<script src="plugin/notes/notes.js"></script>
+	<script src="plugin/markdown/markdown.js"></script>
+	<script src="plugin/highlight/highlight.js"></script>
+	<script src="plugin/math/math.js"></script>
+
+	<script>
+		// More info about initialization & config:
+		// - https://revealjs.com/initialization/
+		// - https://revealjs.com/config/
+		Reveal.initialize({
+			hash: true,
+
+			// Learn about plugins: https://revealjs.com/plugins/
+			plugins: [RevealMarkdown, RevealHighlight, RevealNotes, RevealMath.KaTeX]
+		});
+	</script>
+</body>
+
+</html>
